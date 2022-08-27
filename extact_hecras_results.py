@@ -7,7 +7,8 @@ import h5py as h5
 import numpy as np
     
 # Read H5 file
-f = h5.File("model_output.p01.hdf", "r")
+#f = h5.File("model_output.p01.hdf", "r")
+f = h5.File("Sindh_Complete.p01.hdf", "r")
 print(f.name)
 # Get and print list of datasets within the H5 file
 datasetNames = [n for n in f.keys()]
@@ -20,6 +21,12 @@ print(l)
 print(f[l[0]][l[1]][l[2]][l[3]][l[4]][l[5]][l[6]][l[7]])
 array = np.array(f[l[0]][l[1]][l[2]][l[3]][l[4]][l[5]][l[6]][l[7]][:])
 print(array)
+print("################")
+l='Results/Unsteady/Output/Output Blocks/Base Output/Unsteady Time Series/2D Flow Areas/Perimeter 1/Depth'.split('/') 
+print(l)
+print(f[l[0]][l[1]][l[2]][l[3]][l[4]][l[5]][l[6]][l[7]][l[8]])
+array2d = np.array(f[l[0]][l[1]][l[2]][l[3]][l[4]][l[5]][l[6]][l[7]][l[8]][:])
+print(array2d)
 print("################")
 f.close()
 
